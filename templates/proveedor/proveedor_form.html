@@ -17,22 +17,26 @@
 
 
 	{% if form%} 
-	<input type="submit" name="Guardar" type="submit" />
-	<button type="reset">Limpiar</button>
+	<input class="btn btn-default" type="submit" value="Guardar">
+	<input class="btn btn-default" type="reset" value="Borrar campos">
+	
 	</div>
 	{% endif %}
 	
 
 </form>
-	<button type="button" class="btn btn-primary">Nuevo proveedor</button>
+	
 	{% if nombre %}
 	
 	<div class="row">
 	<div class="col-md-12">
 		<div class="alert alert-success">
+
 		<button class="close" data-dismiss="alert"><span>&times;</span> </button>
-		Precione en la pestaña proveedores para agregar un nuevo proveedor
-		</div>		
+		Precione en la pestaña proveedores o el boton nuevo registro para agregar un nuevo proveedor
+		</div>
+		
+		<a href="proveedor" class="btn btn-primary " role="button">Nuevo registro</a>		
 	</div>	
 	</div>
 	
