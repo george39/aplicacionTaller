@@ -1,0 +1,52 @@
+
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+<form method="post" action="proveedor">
+	<h1><center> Formulario para registro de proveedores</center></h1>
+	
+	<div class="row">
+  <div class="col-xs-3">
+    
+ 
+  	{% csrf_token %}
+	{{ form.as_p}}
+	{{ nombre }}
+
+
+	{% if form%} 
+	<input type="submit" name="Guardar" type="submit" />
+	<button type="reset">Limpiar</button>
+	</div>
+	{% endif %}
+	
+
+</form>
+	<button type="button" class="btn btn-primary">Nuevo proveedor</button>
+	{% if nombre %}
+	
+	<div class="row">
+	<div class="col-md-12">
+		<div class="alert alert-success">
+		<button class="close" data-dismiss="alert"><span>&times;</span> </button>
+		Precione en la pestaña proveedores para agregar un nuevo proveedor
+		</div>		
+	</div>	
+	</div>
+	
+	{% endif %}
+	
+	
+	
+
+
+{% endblock %}
+
+
+
+
+{%  block footer %}
+
+{% endblock %}

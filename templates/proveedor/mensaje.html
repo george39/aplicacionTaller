@@ -1,0 +1,55 @@
+
+
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Inventario{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/custom.min.css' %}">
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+ 
+  <!--<div align="center"><IMG src="{% static 'registro/css/matrix.jpg' %}" WIDTH=178 HEIGHT=180></div> -->
+  
+    <!--<input type="submit" value="Registrar" /> -->
+ 
+<div class="row">
+	<div class="col-md-4">
+		<div class="alert alert-success">
+		<button class="close" data-dismiss="alert"><span>&times;</span> </button>
+		Los datos fueron guardados con exito
+		</div>
+			
+		
+		
+	</div>
+	
+</div>
+
+    
+        
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html>
+
+
+
+
+
+
