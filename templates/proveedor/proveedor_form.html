@@ -2,49 +2,43 @@
 {% extends 'base/base.html' %}
 
 
+<title>{% block title %}Registro de proveedores{% endblock %}</title>
 {% block content %}
 
-<form method="post" action="proveedor">
-	<h1><center> Formulario para registro de proveedores</center></h1>
-	
-	<div class="row">
-  <div class="col-xs-3">
-    
- 
-  	{% csrf_token %}
-	{{ form.as_p}}
-	{{ nombre }}
-
-
-	{% if form%} 
-	<input class="btn btn-default" type="submit" value="Guardar">
-	<input class="btn btn-default" type="reset" value="Borrar campos">
-	
-	</div>
-	{% endif %}
-	
-
-</form>
-	
-	{% if nombre %}
-	
-	<div class="row">
-	<div class="col-md-12">
-		<div class="alert alert-success">
-
-		<button class="close" data-dismiss="alert"><span>&times;</span> </button>
-		Precione en la pestaña proveedores o el boton nuevo registro para agregar un nuevo proveedor
-		</div>
+<section class="main row">
+	<article class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+		<form method="post" action="proveedor">
+			<h1><center> Registro de proveedores</center></h1>    
+		 
+		  	{% csrf_token %}
+		  	{{ form.as_p}}
+		  	{{ nombre }}		
 		
-		<a href="proveedor" class="btn btn-primary " role="button">Nuevo registro</a>		
-	</div>	
-	</div>
-	
-	{% endif %}
-	
-	
-	
 
+			{% if form%} 
+			<input class="btn btn-default" type="submit" value="Guardar">
+			<input class="btn btn-default" type="reset" value="Borrar campos">	
+			{% endif %}
+		</form>	
+		
+		{% if nombre %}
+			<div class="col-md-12">
+				<div class="alert alert-success">
+					<button class="close" data-dismiss="alert"><span>&times;</span> </button>
+					Precione en la pestaña proveedores o el boton nuevo registro para agregar un nuevo proveedor
+				</div>
+				
+				<a href="proveedor" class="btn btn-primary " role="button">Nuevo registro</a>	
+			</div>			
+		{% endif %}
+	</article>
+	<aside class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+		<p>
+			Campo para el asid
+		</p>
+	</aside>
+
+</section>
 
 {% endblock %}
 
