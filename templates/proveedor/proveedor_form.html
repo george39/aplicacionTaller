@@ -2,9 +2,11 @@
 {% extends 'base/base.html' %}
 
 
+
 <title>{% block title %}Registro de proveedores{% endblock %}</title>
 {% block content %}
-
+{% block i%}
+<div class="container">
 <section class="main row">
 	<article class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 		<form method="post" action="proveedor">
@@ -15,12 +17,13 @@
 		  	{{ nombre }}		
 		
 
-			{% if form%} 
-			<input class="btn btn-default" type="submit" value="Guardar">
-			<input class="btn btn-default" type="reset" value="Borrar campos">	
+			{% if form %} 
+			<input class="btn btn-primary" type="submit" value="Guardar">
+			<input class="btn btn-primary" type="reset" value="Borrar campos">	
 			{% endif %}
 		</form>	
 		
+		<!--aqui si imprime un menaje para que precione el boton-->
 		{% if nombre %}
 			<div class="col-md-12">
 				<div class="alert alert-success">
@@ -28,17 +31,28 @@
 					Precione en la pestaña proveedores o el boton nuevo registro para agregar un nuevo proveedor
 				</div>
 				
-				<a href="proveedor" class="btn btn-primary " role="button">Nuevo registro</a>	
+				<a href="proveedor" class="btn btn-primary" role="button">Nuevo registro</a>	
 			</div>			
 		{% endif %}
 	</article>
+{% endblock %}	
+	<!--aqui va la barra de busqueda -->
 	<aside class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-		<p>
-			Campo para el asid
-		</p>
+		<h1>Consultar información de un proveedor</h1>
+			
+		<div class="row">
+   			<div class="col-lg-6">
+    			<div class="input-group">
+     				<input type="text" class="form-control" placeholder="Buscar">
+     				<span class="input-group-btn">
+       				<button class="btn btn-primary" type="button" onclick=" window.location.href='buscarProveedor' ">Buscar</button>
+     				</span>
+    			</div>
+  			</div>
 	</aside>
 
 </section>
+</div>
 
 {% endblock %}
 

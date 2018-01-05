@@ -10,6 +10,7 @@ from django.core.urlresolvers import reverse_lazy
 from proveedor.models import Proveedor
 from django.template import RequestContext
 from django.contrib import messages
+
 def index(request):
 	return render(request, 'cesar/inicio/index.html')
 # Create your views here.
@@ -47,3 +48,11 @@ class DistriUpdate(UpdateView):
 	form_class = DistriForm
 	template_name = 'proveedor/registro_form.html'
 	success_url = reverse_lazy('proveedor:index_view')
+
+
+class ConsultaProveedor(ListView):
+	model = Proveedor 
+	template_name = 'proveedor/consulta.html'
+
+
+

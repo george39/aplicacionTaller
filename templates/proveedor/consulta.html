@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container">
+<section class="main row">
+<article class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+	
+	{{ block.i }}
+	
+</article>
+	
+	
+	
+		<table class="table table-bordered">
+		{% csrf_token %}
+			<thead>
+				<tr>
+					
+					<td>Identificación proveedor</td>
+					<td>Nombre proveedor</td>
+					<td>Dirección</td>
+					<td>Telefono</td>
+					<td>Correo electronico</td>
+
+				</tr>
+			</thead>
+			<tbody>
+				{% if object_list %}
+				{% for busqueda in object_list %}
+				<tr>
+					<td>{{ busqueda.id_proveedor }}</td>
+					<td>{{ busqueda.nombre_proveedor }}</td>
+					<td>{{ busqueda.direccion }}</td>
+					<td>{{ busqueda.telefono }}</td>
+					<td>{{ busqueda.email }}</td>
+						<a class="btn btn-primary" href=""></a>
+						
+					
+					
+				</tr>
+				{% endfor %}
+				{% else %}
+				<h1>No hay ningun registro</h1>
+				{% endif %}
+			</tbody>
+		</table>
+		</div>
+	</aside>	
+</section>	
+</div>
+
+{% endblock %}
+
